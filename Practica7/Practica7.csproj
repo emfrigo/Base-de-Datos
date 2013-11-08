@@ -32,10 +32,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\Downloads\p3_baseDatos-master\mysqlConnect\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="MySQL.cs" />
+    <Compile Include="Alumnos.cs" />
+    <Compile Include="Maasdin.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
