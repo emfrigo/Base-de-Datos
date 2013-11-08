@@ -1,25 +1,33 @@
 using System;
 using MySql.Data.MySqlClient;
-namespace mysqlConnect
+
+namespace Practica7
+
 {
-	public class Alumnos : MySQL
+	public class Comandos : MySQL
 	{
-		public Alumnos ()
+		public Comandos ()
 		{
 		}
 		
 		public void mostrarTodos(){
 			this.abrirConexion();
-            MySqlCommand myCommand = new MySqlCommand(this.querySelect(), 
-			                                          myConnection);
+            MySqlCommand myCommand = new MySqlCommand(this.querySelect(),myConnection);
             MySqlDataReader myReader = myCommand.ExecuteReader();	
 	        while (myReader.Read()){
 	            string id = myReader["id"].ToString();
-	            string codigo = myReader["codigo"].ToString();
 	            string nombre = myReader["nombre"].ToString();
-	            Console.WriteLine("ID: " + id +
-				                  " Código: " + codigo + 
-				                  " Nombre: " + nombre);
+	            string codigo = myReader["codigo"].ToString();
+				string telefono = myReader["telefono"].ToString();
+				string email = myReader["email"].ToString();
+
+	            Console.WriteLine(
+		        		"ID: " + id 
+					+ "\n|Nombre: " + nombre + "|"
+				    + "\n|Codigo: " + codigo + "|"
+					+ "\n|Telefono: " + telefono + "|"
+					+ "\n|E-mail: " + email + ""
+					);
 	       }
 			
             myReader.Close();
@@ -29,7 +37,7 @@ namespace mysqlConnect
 			this.cerrarConexion();
 		}
 		
-		public void insertarRegistroNuevo(string codigo, string nombre){
+		public void insertarRegistroNuevo(string nombre, string codigo, string telefono, string email){
 			this.abrirConexion();
 			string sql = "INSERT INTO `alumno` (`codigo`, `nombre`) VALUES ('" + codigo + "', '" + nombre + "')";
 			this.ejecutarComando(sql);

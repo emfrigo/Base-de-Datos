@@ -1,7 +1,7 @@
 using System;
 using MySql.Data.MySqlClient;
 
-namespace mysqlConnect
+namespace Practica7
 {
 	public class MySQL
 	{

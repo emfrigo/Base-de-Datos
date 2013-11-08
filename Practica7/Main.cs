@@ -1,4 +1,5 @@
 using System;
+using MySql.Data.MySqlClient;
 
 namespace Practica7
 {
@@ -7,6 +8,8 @@ namespace Practica7
 		public static void Main (string[] args)
 		{	int sel;
 
+			Comandos com = new Comandos();
+		menu:
 			Console.WriteLine(
 				"*****MENU*****\n"
 				+ "+ 1) Mostrar Todos\n"
@@ -20,10 +23,19 @@ namespace Practica7
 
 			switch(sel){
 			case 1:
-				break;
+				com.mostrarTodos();
+				goto menu;
+
 			case 2:
-				break;
+				goto menu;
+
 			case 3:
+				break;
+
+			case 4:
+				break;
+
+			case 5:
 				break;
 			
 			}		}

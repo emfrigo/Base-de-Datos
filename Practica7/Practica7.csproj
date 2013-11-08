@@ -40,8 +40,8 @@
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="MySQL.cs" />
-    <Compile Include="Alumnos.cs" />
     <Compile Include="Maasdin.cs" />
+    <Compile Include="Comandos.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
