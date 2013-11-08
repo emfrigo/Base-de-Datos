@@ -39,7 +39,18 @@ namespace Practica7
 		
 		public void insertarRegistroNuevo(string nombre, string codigo, string telefono, string email){
 			this.abrirConexion();
-			string sql = "INSERT INTO `alumno` (`codigo`, `nombre`) VALUES ('" + codigo + "', '" + nombre + "')";
+			string sql = (
+				"INSERT INTO " +
+				"`alumno` (" +
+					"`codigo`, " +
+					"`nombre`" +
+					") VALUES (" +
+					"'" + nombre + "'," +
+					"'" + codigo + "'," +
+					"'" + telefono + "'," +
+					"'" + email + "'," +
+				")"
+				);
 			this.ejecutarComando(sql);
 			this.cerrarConexion();
 		}
