@@ -10,6 +10,7 @@ namespace Practica7
 
 			Comandos com = new Comandos();
 		menu:
+			Console.Clear();
 			Console.WriteLine(
 				"*****MENU*****\n"
 				+ "+ 1) Mostrar Todos\n"
@@ -24,9 +25,12 @@ namespace Practica7
 			switch(sel){
 			case 1:
 				com.mostrarTodos();
+				Console.ReadKey(true);
 				goto menu;
 
 			case 2:
+				Console.Clear();
+				new MainClass().nvoRegistro();
 				goto menu;
 
 			case 3:
@@ -38,6 +42,24 @@ namespace Practica7
 			case 5:
 				break;
 			
-			}		}
+			}		
+		}
+
+		public void nvoRegistro ()
+		{
+			Comandos com = new Comandos();
+
+			Console.Write("Ingrese los sigueintes datos\nNombre: ");
+			String nombreN = Console.ReadLine();
+			Console.Write("\nCodigo: ");
+			String codigoN = Console.ReadLine();
+			Console.Write("\nTelefono: ");
+			String telefonoN = Console.ReadLine();
+			Console.Write("\nEmail: ");
+			String emailN = Console.ReadLine();
+
+			com.insertarRegistroNuevo(nombreN, codigoN, telefonoN, emailN);
+		}
+
 	}
 }

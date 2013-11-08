@@ -11,6 +11,7 @@ namespace Practica7
 		}
 		
 		public void mostrarTodos(){
+			try{
 			this.abrirConexion();
             MySqlCommand myCommand = new MySqlCommand(this.querySelect(),myConnection);
             MySqlDataReader myReader = myCommand.ExecuteReader();	
@@ -30,29 +31,39 @@ namespace Practica7
 					);
 	       }
 			
+			
             myReader.Close();
 			myReader = null;
             myCommand.Dispose();
 			myCommand = null;
 			this.cerrarConexion();
+
+				}catch(Exception){
+				Console.Clear();
+				Console.WriteLine("Error al obtener la informacion");
+			}
 		}
 		
 		public void insertarRegistroNuevo(string nombre, string codigo, string telefono, string email){
+
 			this.abrirConexion();
 			string sql = (
 				"INSERT INTO " +
 				"`alumno` (" +
-					"`codigo`, " +
-					"`nombre`" +
+					"`nombre`, " +
+					"`codigo`" +
+					"`telefono`" +
+					"`email `" +
 					") VALUES (" +
 					"'" + nombre + "'," +
 					"'" + codigo + "'," +
 					"'" + telefono + "'," +
-					"'" + email + "'," +
-				")"
+					"'" + email +
+				"')"
 				);
 			this.ejecutarComando(sql);
 			this.cerrarConexion();
+		
 		}
 		
 		public void editarCodigoRegistro(string id, string codigo){
