@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\Downloads\p3_baseDatos-master\mysqlConnect\bin\Debug\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Descargas\v4\Mysql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

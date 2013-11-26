@@ -72,15 +72,8 @@ namespace Practica7
 			this.ejecutarComando(sql);
 			this.cerrarConexion();
 		}
-		
-		public void editarNombreRegistro(string id, string nombre){
-			this.abrirConexion();
-			string sql = "UPDATE `alumno` SET `nombre`='" + nombre + "' WHERE (`id`='" + id + "')";
-			this.ejecutarComando(sql);
-			this.cerrarConexion();
-		}
-		
-		public void eliminarRegistroPorId(string id){
+
+		public void eliminarRegistro(int id){
 			this.abrirConexion();
 			string sql = "DELETE FROM `alumno` WHERE (`id`='" + id + "')";
 			this.ejecutarComando(sql);
