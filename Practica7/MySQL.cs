@@ -6,8 +6,10 @@ namespace Practica7
 	public class MySQL
 	{
 		protected MySqlConnection myConnection;
+
 		public MySQL ()
 		{
+
 		}
 		
 		protected void abrirConexion(){

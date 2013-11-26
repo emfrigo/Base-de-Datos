@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\Descargas\v4\Mysql.Data.dll</HintPath>
+      <HintPath>..\v4\mysql.data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +42,8 @@
     <Compile Include="MySQL.cs" />
     <Compile Include="Maasdin.cs" />
     <Compile Include="Comandos.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Query.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

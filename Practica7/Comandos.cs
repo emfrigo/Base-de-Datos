@@ -8,15 +8,18 @@ namespace Practica7
 	{
 		public Comandos ()
 		{
+
 		}
 		
 		public void mostrarTodos(){
 			try{
+				Console.WriteLine("Abriendo conexion");
 			this.abrirConexion();
+				Console.WriteLine("Conexion abierta \n ejecutando comando");
             MySqlCommand myCommand = new MySqlCommand(this.querySelect(),myConnection);
             MySqlDataReader myReader = myCommand.ExecuteReader();	
 	        while (myReader.Read()){
-	            string id = myReader["id"].ToString();
+	            int id = Convert.ToInt32 (myReader["id"]);
 	            string nombre = myReader["nombre"].ToString();
 	            string codigo = myReader["codigo"].ToString();
 				string telefono = myReader["telefono"].ToString();
@@ -66,7 +69,7 @@ namespace Practica7
 		
 		}
 		
-		public void editarCodigoRegistro(string id, string codigo){
+		public void editarCodigoRegistro(int id, string codigo){
 			this.abrirConexion();
 			string sql = "UPDATE `alumno` SET `codigo`='" + codigo + "' WHERE (`id`='" + id + "')";
 			this.ejecutarComando(sql);

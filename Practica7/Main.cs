@@ -3,13 +3,14 @@ using MySql.Data.MySqlClient;
 
 namespace Practica7
 {
-	class MainClass
+	public class MainClass
 	{
 		public static void Main (string[] args)
 		{	
 				int sel;
 
 				menu:
+
 				Console.Clear ();
 				Console.WriteLine (
 					"*****MENU*****\n"
@@ -24,7 +25,7 @@ namespace Practica7
 
 				switch (sel) {
 				case 1:
-					//new Comandos().mostrarTodos ();
+					new Conexion();
 					Console.ReadKey (true);
 					goto menu;
 
@@ -66,8 +67,10 @@ namespace Practica7
 
 		public void eliminarRegistro ()
 		{
-			Console.Write("Ingrese el registro que desea borrar: ");
-			int del = Convert.ToInt32(Console.Read());
+			Console.WriteLine("Ingrese el registro que desea borrar: ");
+			int del = int.Parse(Console.ReadLine());
+			Console.Write(del);
+			Console.ReadKey(true);
 			new Comandos().eliminarRegistro(del);
 		}
 
